@@ -5,7 +5,7 @@ except ImportError:
 
 from fnmatch import fnmatch
 
-from elasticsearch.exceptions import NotFoundError, RequestError
+from elasticsearch_farfor.exceptions import NotFoundError, RequestError
 from six import add_metaclass, iteritems
 
 from .connections import get_connection
@@ -170,7 +170,7 @@ class Document(ObjectBase):
     @classmethod
     def get(cls, id, using=None, index=None, **kwargs):
         """
-        Retrieve a single document from elasticsearch using it's ``id``.
+        Retrieve a single document from elasticsearch_farfor using it's ``id``.
 
         :arg id: ``id`` of the document to be retrieved
         :arg index: elasticsearch index to use, if the ``Document`` is

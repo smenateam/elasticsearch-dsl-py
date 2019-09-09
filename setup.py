@@ -13,9 +13,16 @@ f.close()
 install_requires = [
     'six',
     'python-dateutil',
-    'elasticsearch>=7.0.0,<8.0.0',
     # ipaddress is included in stdlib sincxe py 3.3
-    'ipaddress; python_version<"3.3"'
+    'ipaddress; python_version<"3.3"',
+    
+    # Github Private Repository - needs entry in `dependency_links`
+    'elasticsearch-farfor'
+]
+
+dependency_links=[
+    # Make sure to include the `#egg` portion so the `install_requires` recognizes the package
+    'git+ssh://git@github.com:smenateam/elasticsearch-py.git#egg=ElasticsearchFarfor'
 ]
 
 tests_require = [
@@ -28,7 +35,7 @@ tests_require = [
 ]
 
 setup(
-    name = "elasticsearch-dsl",
+    name = "elasticsearch-dsl-farfor",
     description = "Python client for Elasticsearch",
     license="Apache License, Version 2.0",
     url = "https://github.com/elasticsearch/elasticsearch-dsl-py",
